@@ -46,3 +46,11 @@ print(f"Loss: {loss}")
 print(f"Accuracy: {accuracy}")
 
 model.save('image_classifier.model')
+
+img = cv.imread('horse.jpg')
+img = cv.cvtColor(img, cv.COLOR_BGR2RGB)
+plt.imshow(img, cmap=plt.cm.binary)
+
+prediction = model.predict(np.array([img])/255.0)
+index = np.argmax(prediction)
+print(class_names[index])
