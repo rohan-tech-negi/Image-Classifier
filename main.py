@@ -1,4 +1,4 @@
-import cv2 as cv2
+import cv2 as cv
 import numpy as numpy
 import matplotlib.pyplot as plt 
 from tensorflow.keras import datasets, layers, models
@@ -9,4 +9,15 @@ training_images, training_images = training_images / 255 , training_images / 255
 
 
 class_names = ['plane', 'car', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
+
+
+for i in range(16):
+    plt.subplot(4,4, i+1)
+    plt.xticks([])
+    plt.yticks([])
+    plt.imshow(training_images[i], cmap=plt.cm.binary)
+    plt.xlabel(class_names[training_labels[i][0]])
+
+plt.show()
+
 
