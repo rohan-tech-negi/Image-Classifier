@@ -21,3 +21,8 @@ for i in range(16):
 plt.show()
 
 
+training_images = training_images[:20000]
+training_labels = training_labels[:20000]
+testing_images = testing_images[:4000]
+testing_labels = testing_labels[:4000]
+
